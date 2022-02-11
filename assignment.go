@@ -24,7 +24,7 @@ func main() {
 		order = strings.ToUpper(order)
 
 		if order == "END" {
-			total_income(sales)
+			total_earning(sales)
 		} else {
 			fmt.Scan(&quantity)
 		}
@@ -37,13 +37,13 @@ func main() {
 	}
 }
 
-func total_income(sale []int) {
-	sum := 0
+func total_earning(sale []int) {
+	income := 0
 
 	for i := 0; i < len(sale); i++ {
-		sum = sale[i] + sum
+		income = sale[i] + income
 	}
-	fmt.Println("Total Income for the day is : ", sum)
+	fmt.Println("Total earnings for the day is : ", income)
 	os.Exit(0)
 }
 
@@ -64,6 +64,6 @@ func bill(quantity int, order string) int {
 		"L": 15,
 		"S": 20,
 	}
-	totalbill := quantity * m[order]
+	totalbill := (quantity * m[order])
 	return totalbill
 }
